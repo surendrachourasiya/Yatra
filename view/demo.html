@@ -1,0 +1,111 @@
+<!--
+ Name : Surendra Chourasiya
+ Date : 29/03/2016 and 30/03/2016
+ Purpose : Structure
+
+ -->
+<html lang="en" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+</head>
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+	<script src="../JS/"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+  
+  <!-- Your application bootstrap  -->
+  <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">    
+    angular.module('BlankApp', ['ngMaterial']);
+  </script>
+  <style type="text/css">
+  .navbar
+  {
+  	color:white;
+  	font-size: 25px;
+  }
+  </style>
+  
+  
+  <body ng-app="BlankApp" ng-cloak style="background-color:#eee">
+  	
+  	<div>
+  	<nav class="navbar navbar-inverse navbar-center navbar-fixed-top">
+  		<center>Hotel</center>
+  		</nav></div>
+
+  	<div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6" id="center"><br><br>
+				        	<div ng-cloak>
+				  <md-content>
+				    <md-tabs md-dynamic-height md-border-bottom>
+				      <md-tab label="Home">
+				        <md-content class="md-padding">
+				          <h1 class="md-display-2">Tab One</h1>
+				          <p>Lorem</p>
+				        </md-content>
+				      </md-tab>
+				      <md-tab label="Add">
+				        <md-content class="md-padding">
+				          <h1 class="md-display-1">Add Hotel</h1>
+				          <div class="row">
+				          	<div class="col-lg-6">
+									  <table class="table table-bordered">
+											<thead>
+												<tr>
+													<th>ID</th>
+													<th>Title</th>
+												</tr>
+										</thead>
+										<tbody ng-repeat="url in urls">
+											<tr>
+												<td>{{url.id}}</td>
+												<td>{{url.title}}</td>
+											</tr>
+
+											<!-- urlCollapsed -->
+											<tr collapse="!url{{$index + 1}}" style="background-color: pink">
+												<td>{{url.traffic}}</td>
+												<td>{{url.descr}}</td>
+											</tr>
+										</tbody>
+									</table>
+									  <input type="button" value="Add"></input>
+								</div>
+								<div class="col-lg-6">
+									  Right Column some text goes here
+								</div>
+							</div>
+
+				        </md-content>
+				      </md-tab>
+				      <md-tab label="Search">
+				        <md-content class="md-padding">
+				          <h1 class="md-display-2">Tab Three</h1>
+				          <p>Integer </p>
+				        </md-content>
+				      </md-tab>
+				    </md-tabs>
+				  </md-content>
+				</div>
+        	</div>
+        <div class="col-lg-3"></div>
+    </div>
+</body>
+</html>

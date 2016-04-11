@@ -1,0 +1,350 @@
+<!-- Name : Surendra Chourasiya
+     Date : 30/03/2016
+     Purpose : Demo of add data and display in the form of checkbox same page
+
+ -->
+
+
+<!DOCTYPE html>
+<html ng-app="myapp">
+   <head>
+    <!--  <link rel="stylesheet" href="css/bootstrap.css"> -->
+     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min
+     .js"></script>
+     
+
+
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Angular Material style sheet -->
+      <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+      <!-- Angular Material requires Angular.js Libraries -->
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+
+      <!-- Angular Material Library -->
+      <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+      
+      <!-- Your application bootstrap  -->
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<!--		 <script type="text/javascript" src="../JS/food_cordinator.js"></script>-->
+  <style type="text/css">
+
+  </style>
+    </head>
+
+<div>
+  
+</div>
+ 
+<body style="background-color:#eee">
+  <!-- Nav bar -->
+    <nav class="navbar navbar-default navbar-inverse">
+      <div class="container-fluid">
+          <a data-toggle="dropdown"><h2 class="glyphicon glyphicon-menu-hamburger"></h2></a>
+          <ul class="dropdown-menu">
+            <li><a href="food_cordinator.html"><h5>Yatra Detail</h5></a></li>
+            <li><a href="food_cordinator.html"><h5>Area Coordinator</h5></a></li>
+            <li><a href="food_cordinator.html"><h5>Kitchen Coordinator</h5></a></li>
+            <li><a href="food_cordinator.html"><h5>Transport Coordinator</h5></a></li>
+            <li> <a href="food_cordinator.html"><aclass="active"><h5>Hotel Coordinator</h5></a></li>
+          </ul>
+        </div>
+    </nav>
+      <div class="row">
+        <div class="col-lg-2"></div>
+
+        <div class="col-lg-8" id="center"><br><br>
+          <div ng-cloak>
+            <md-content>
+            <md-tabs md-dynamic-height md-border-bottom>
+
+              <md-tab label="Home">
+                <md-content class="md-padding">
+                  <h1 class="md-display-1">Home</h1>
+                  <p>Lorem</p>
+                </md-content>
+              </md-tab>
+							
+							<md-tab label="Breakfast">
+                <md-content class="md-padding">
+                  <h1 class="md-display-1">Breakfast</h1>
+                  <div ng-controller="breakfastCtrl">
+																				<label ng-repeat="user in users">
+																					<ul><input type="checkbox" ng-model="authors[user.name]">{{user.name}}</ul>
+																				</label>
+
+																				<div>
+																					<h4>You have selected</h4>
+																					{{ authors | toText }}
+																				</div>
+																			</div>
+                </md-content>
+              </md-tab>
+							
+							<md-tab label="Lunch">
+                <md-content class="md-padding">
+                  <h1 class="md-display-1">Lunch</h1>
+                  <div ng-controller="lunchCtrl">
+																				<label ng-repeat="user in users">
+																				<ul>	<input type="checkbox" ng-model="authors[user.name]">{{user.name}}</ul>
+																				</label>
+
+																				<div>
+																					<h4>You have selected</h4>
+																					{{ authors | toText }}
+																				</div>
+																			</div>
+                </md-content>
+              </md-tab>
+							
+							<md-tab label="Dinner">
+                <md-content class="md-padding">
+                  <h1 class="md-display-1">Dinner</h1>
+                  <div ng-controller="foodCtrl">
+																				<label ng-repeat="user in users">
+																					<ul><input type="checkbox" ng-model="authors[user.name]">{{user.name}}</br></ul>
+																				</label>
+
+																				<div>
+																					<h4>You have selected</h4>
+																					{{ authors | toText }}
+																				</div>
+																			</div>
+                </md-content>
+              </md-tab>
+							
+							<md-tab label="Report">
+                <md-content class="md-padding">
+                  <h1 class="md-display-1">Report</h1>
+                  <div class="col-md-3">
+																				<p>2 Nov</p><br/><p>3 Nov</p><br/><p>4 Nov</p><br/><p>5 Nov</p><br/>
+																				<p>6 Nov</p><br/><p>7 Nov</p><br/><p>8 Nov</p><br/><p>9 Nov</p><br/>
+																		</div>
+																		<div class="col-md-9">
+																				<h3><u><a href="#"> Breakfast</a></u></h3>
+																				<p>Idli-Sambhar, Urad Vada, Chutney, Fruits</p><br/>
+																				<h3><u><a href="#"> Lunch Menu</a></u></h3>
+																				<p>Pongal, Chutney, Tommoto Chutney, Bananas</p><br/>
+																				<h3><u><a href="#"> Dinner Menu</a></u></h3>
+																				<p>Veg biryani, Hot milk, Chutney, Sugar</p><br/>
+																		</div>
+                </md-content>
+              </md-tab>
+
+              <md-tab label="Cooking Team">
+                <md-content class="md-padding">
+                  <h1 class="md-display-1">Cooking Team</h1>
+                  <div class="row" ng-controller="entryCtrl">
+                    <div class="col-lg-6" >
+                      <form ng-submit="addName()">
+                          <table class="table table-script">
+                            <tbody>
+                              <tr>
+                           <td>Name:</td><td> <input type="text" ng-model="getName"></td></tr>
+                           <tr><td>Contact:</td><td> <input type="text" ng-model="getContact"></td></tr>
+                           <tr><td>Email Id:</td><td> <input type="text" ng-model="getEmailId"></td></tr>
+                           <tr><td>Charges:</td><td><input type="number" ng-model="getCharges"></td></tr>
+                          
+                           
+                         </tbody>
+																											 <tr></tr>
+                         </table>
+                        <center><input type="submit" value="add"></center><br/>
+                      </form></div>
+
+											<div class="col-lg-6">   
+												
+											</div>
+										<table class="table table-striped" border="1">
+													<thead>
+														<th>Name</th>
+														<th>Contact</th>
+														<th>Email</th>
+														<th>Charges</th>
+
+													</thead>
+														<tr ng-repeat="userdetail in userdetails">
+														<td>{{userdetail.name}}</td>
+														<td>{{userdetail.contact}}</td>
+														<td>{{userdetail.email}}</td>
+														<td>{{userdetail.charges}}</td>
+														</tr>
+												</table>
+									</div>
+								</md-content>
+							</md-tab>
+							<md-tab label="Add Food Items">
+                <md-content class="md-padding">
+                  <h1 class="md-display-1">Add Food Items</h1>
+                  <table class="table table-script">
+                    <tbody>
+                      <tr>
+                        <td>Enter Breakfast items:</td>
+                        <td> <input type="text" ></td>
+                        <td> <input type="button" value="Add"></td>
+                      </tr>
+                       <tr>
+                        <td>Enter Lunch items:</td>
+                        <td> <input type="text" ></td>
+                        <td> <input type="button" value="Add"></td>
+                      </tr>
+                      <tr>
+                        <td>Enter Dinner items:</td>
+                        <td> <input type="text"></td>
+                        <td> <input type="button" value="Add"></td>
+                      </tr>    
+                    </tbody>
+                    <tr></tr>
+                   </table>
+                </md-content>
+              </md-tab>
+							</md-tabs>
+						</md-content>
+					</div>
+				</div>
+	</div>
+
+
+
+  <script>
+ 	// Code goes here in checkbox for dinner...
+
+var app = angular.module('myapp',['ngMaterial']);
+
+app.controller('foodCtrl', function($scope){
+  
+  $scope.users = [
+    {'id':1,'name':'Biryani'},
+    {'id':2,'name':'Raita'},
+    {'id':3,'name':'Hot & sour soup'},
+		{'id':4,'name':'Paratha'},
+		{'id':5,'name':'Upma'},
+		{'id':6,'name':'Yogurt Rice'},
+		{'id':7,'name':'Fried Rice'},
+		{'id':8,'name':'Coconut Rice'},
+		{'id':9,'name':'Wheat Pasta'},
+		{'id':10,'name':'Italian Soup'},
+  ];
+	
+  $scope.authors = {};
+  
+});
+
+app.filter('toText', function(){
+  return function(jsonRaw){
+    if(jsonRaw){
+    andVal=[]
+    for(var i in jsonRaw){
+			if(jsonRaw[i])
+        andVal.push(i);
+    } 
+    return andVal.join(' , ');
+    }
+  }
+});
+		
+		// Code goes here in checkbox for lunch...
+
+
+app.controller('lunchCtrl', function($scope){
+  
+  $scope.users = [
+    {'id':1,'name':'Biryani'},
+    {'id':2,'name':'Raita'},
+    {'id':3,'name':'Hot & sour soup'},
+		{'id':4,'name':'Paratha'},
+		{'id':5,'name':'Upma'},
+		{'id':6,'name':'Yogurt Rice'},
+		{'id':7,'name':'Fried Rice'},
+		{'id':8,'name':'Coconut Rice'},
+		{'id':9,'name':'Wheat Pasta'},
+		{'id':10,'name':'Italian Soup'},
+  ];
+	
+  $scope.authors = {};
+  
+});
+
+app.filter('toText', function(){
+  return function(jsonRaw){
+    if(jsonRaw){
+    andVal=[]
+    for(var i in jsonRaw){
+			if(jsonRaw[i])
+        andVal.push(i);
+    } 
+    return andVal.join(' , ');
+    }
+  }
+});	
+		
+	// Code goes here in checkbox for breakfast...
+
+
+app.controller('breakfastCtrl', function($scope){
+  
+  $scope.users = [
+    {'id':1,'name':'Biryani'},
+    {'id':2,'name':'Raita'},
+    {'id':3,'name':'Hot & sour soup'},
+		{'id':4,'name':'Paratha'},
+		{'id':5,'name':'Upma'},
+		{'id':6,'name':'Yogurt Rice'},
+		{'id':7,'name':'Fried Rice'},
+		{'id':8,'name':'Coconut Rice'},
+		{'id':9,'name':'Wheat Pasta'},
+		{'id':10,'name':'Italian Soup'},
+  ];
+	
+  $scope.authors = {};
+  
+});
+
+app.filter('toText', function(){
+  return function(jsonRaw){
+    if(jsonRaw){
+    andVal=[]
+    for(var i in jsonRaw){
+			if(jsonRaw[i])
+        andVal.push(i);
+    } 
+    return andVal.join(' , ');
+    }
+  }
+});	
+
+
+   app.controller("entryCtrl", function($scope) {
+        $scope.userdetails = [
+            
+          ];
+ 
+  $scope.addName = function() {
+    if ($scope.getName && $scope.getContact && $scope.getEmailId) {
+      $scope.userdetails.push({'name':$scope.getName,
+                        			'contact':$scope.getContact,
+															'email':$scope.getEmailId,
+															 'charges':$scope.getCharges
+															});
+      
+      $scope.getName='';
+      $scope.getContact='';
+			$scope.getEmailId='';
+			$scope.getCharges='';
+      
+    };
+		console.log($scope.userdetails);
+  }
+});
+  </script>
+</body>
+</html>

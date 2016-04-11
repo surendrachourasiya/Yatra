@@ -1,0 +1,154 @@
+<!-- Name : Neha Jaiswal
+     Date : 30/03/2016
+     Updated Date : 31/03/2016
+     Purpose : Demo of add data and display tabular form in same page
+
+ -->
+
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html ng-app="myapp">
+   <head>
+     <link rel="stylesheet" href="css/bootstrap.css">
+     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min
+     .js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
+
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Angular Material style sheet -->
+      <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+      <!-- Angular Material requires Angular.js Libraries -->
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+
+      <!-- Angular Material Library -->
+      <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+      
+      <!-- Your application bootstrap  -->
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+      <style type="text/css">
+        .navbar
+        {
+          color:white;
+          font-size: 25px;
+        }
+        .i1
+        {
+          margin-left: 80px;
+          width: 75px;
+          height: 25px;
+          background-color: yellow;
+        }
+        
+        </style>
+
+    </head>
+<body ng-controller="entryCtrl" style="background-color:#eee">
+
+ <div> <nav class="navbar navbar-inverse navbar-center navbar-fixed-top">
+      <center>Hotel</center>
+      </nav></div>
+
+      <div class="row">
+        <div class="col-lg-3"></div>
+
+        <div class="col-lg-6" id="center"><br><br>
+          <div ng-cloak>
+            <md-content>
+            <md-tabs md-dynamic-height md-border-bottom>
+
+              <md-tab label="Home">
+                <md-content class="md-padding">
+                  <h1 class="md-display-1">Home</h1>
+                  <p>Lorem</p>
+                </md-content>
+              </md-tab>
+
+              <md-tab label="Cooking Team">
+                <md-content class="md-padding">
+                  <h1 class="md-display-1">Add Hotel</h1>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <form ng-submit="addName()">
+                          <table>
+                            <tbody>
+                              <tr>
+                           <td>Hotel Name:</td><td> <input type="text" ng-model="getName"></td></tr>
+                           <td>Address:</td><td> <input type="text" ng-model="getAdd"></td></tr>
+                           <td>City:</td><td> <input type="text" ng-model="getCity"></td></tr>
+                           <td>Contact_No:</td><td><input type="number" ng-model="getCon"></td></tr>
+                           <td>Date From:</td><td><input type="date" ng-model="getFrom"></td></tr>
+                           <td>To:</td><td><input type="date" ng-model="getTo"></td></tr>
+                           <td>Hotel_Type:</td><td><input type="text" ng-mpdel="getType"></td></tr>
+                           <td>Total_Rooms:</td><td><input type="number" ng-model="getRoom"></td></tr>
+                           
+                         </tbody>
+                         </table>
+                         <input type="submit" value="add">
+                      </form></div>
+
+              <div class="col-lg-6">   
+                <table border="1">
+                  <thead>
+                    <th>Address</th>
+                    <th>Date From</th>
+                    <th>To</th>
+                    
+                  </thead>
+                    <tr ng-repeat="userdetail in userdetails">
+                    <td>{{userdetail.add}}</td>
+                    <td>{{userdetail.from | date:'yyyy-MM-dd'}}</td>
+                    <td>{{userdetail.to | date:'yyyy-MM-dd'}}</td> 
+                    </tr>
+                </table>
+              </div> 
+  </div>
+    </div>
+     </md-content>
+              </md-tab>
+              </md-tabs>
+           </md-content>
+         </div></div>
+
+  <script>
+  angular.module("myapp", ['ngMaterial'])
+   .controller("entryCtrl", function($scope) {
+        $scope.userdetails = [
+            
+          ];
+ 
+  $scope.addName = function() {
+    if ($scope.getName && $scope.getAdd && $scope.getCity ) {
+      $scope.userdetails.push({'name':$scope.getName,
+                        'add':$scope.getAdd,
+                         'city':$scope.getCity,
+                         'con':$scope.getCon,
+                         'from':$scope.getFrom,
+                         'to':$scope.getTo,
+                         'type':$scope.getType,
+                         'room':$scope.getRoom});
+      
+      $scope.getName='';
+      $scope.getAdd='';
+      $scope.getCity='';
+      $scope.getCon='';
+      $scope.getFrom='';
+      $scope.getTo='';
+      $scope.getType='';
+      $scope.getRoom='';
+    };
+  }
+});
+
+  </script>
+</body>
+</html>

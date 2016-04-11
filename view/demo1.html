@@ -1,0 +1,253 @@
+<!--
+ Name : Surendra Chourasiya
+ Date : 29/03/2016 and 30/03/2016
+ Purpose : Structure
+
+ -->
+<html lang="en" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+</head>
+
+<style>
+
+.table .tr {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  
+}
+	</style>
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+	
+	<script src="../bower_components/angularfire/dist/angularfire.min.js"></script>
+	<script src="../bower_components/firebase/firebase.js"
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+  
+  <!-- Your application bootstrap  -->
+  <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+
+  <script type="text/javascript">    
+    angular.module('BlankApp', ['ngMaterial']);
+  </script>
+  <style type="text/css">
+  .navbar
+  {
+  	color:white;
+  	font-size: 25px;
+  }
+  .table {
+  	border top: 0px solid;
+  }
+  </style>
+  
+  
+  <body ng-app="BlankApp" ng-cloak style="background-color:#eee">
+  	<div>
+  		<nav class="navbar navbar-inverse navbar-center navbar-fixed-top">
+  			<center>Breakfast</center>
+  		</nav>
+  	</div>
+
+  	<div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-7" id="center"><br><br>
+			<div ng-cloak>
+				  <md-content>
+				    <md-tabs md-dynamic-height md-border-bottom>
+				      <md-tab label="Home">
+				        <md-content class="md-padding">
+				          <h1 class="md-display-2">Tab One</h1>
+				          <p>Lorem</p>
+				        </md-content>
+				      </md-tab>
+
+				      <!--Breakfast menu list item here-->
+				      <md-tab label="Breakfast">
+				        <md-content class="md-padding">
+				          <h1 class="md-display-1">Breakfast</h1>
+				          <div class="row">
+				          	<div class="col-lg-6">
+								<table class="table">
+									<tbody>
+										<tr>
+									        <td class="d1"><input type="checkbox" ng-model="myVar" value="Idli-Sambhar">Idli Sambhar</td>
+											<td><input type="checkbox" ng-model="myVar" value="Pondal">Pondal</td>
+									    </tr>
+									    <tr>
+									       <td><input type="checkbox" ng-model="myVar" value="Urad-Vada">Urad-Vada</td>
+											<td><input type="checkbox" ng-model="myVar" value="Dosa">Dosa</td>
+									    <tr>
+									        <td><input type="checkbox" ng-model="myVar" value="Sambhar">Sambhar</td>
+											<td><input type="checkbox" ng-model="myVar" value="Toor-Vada">Toor Vada</td>
+									    </tr>
+									    <tr>
+									        <td><input type="checkbox" ng-model="myVar" value="Chutney">Chutney</td>
+											<td><input type="checkbox" ng-model="myVar" value="Wheat-Noodles">Wheat Noodles</td>
+									    </tr>
+									    <tr>
+									        <td><input type="checkbox" ng-model="myVar" value="Fruits">Fruits</td>
+											<td><input type="checkbox" ng-model="myVar" value="Vegetables-Pasta-Salad">Vegetables Pasta Salad</td>
+									    </tr>
+									    <tr>
+									        <td><input type="checkbox" ng-model="myVar" value="Banda">Banda</td>
+											<td><input type="checkbox" ng-model="myVar" value="Broken-Wheat-Upma">Broken Wheat Upma</td>
+									    </tr>
+									    <tr>
+									        <td><input type="checkbox" ng-model="myVar" value="Pototo Curry">Pototo Curry</td>
+											<td><input type="checkbox" ng-model="myVar" value="Khichadi">Khichadi</td>
+									    </tr>
+									</tbody>
+								</table>
+								<center><input type="button" value="Confirm"></input></center>
+							
+				        </md-content>
+				      </md-tab>
+
+				      <!--Lunch menu list item here-->
+
+				      <md-tab label="Lunch">
+				        <md-content class="md-padding">
+				          <h1 class="md-display-2">Lunch</h1>
+				          <div class="row">
+				          	<div class="col-lg-6">
+				          		
+							<table class="table">
+								<tbody>
+								<tr>
+							    	<td class="td"><input type="checkbox" ng-model="myVar" value="Dum-Aloo">Dum Aloo</td>
+									<td><input type="checkbox" ng-model="myVar" value="Yogurt">Yogurt</td>
+								</tr>
+							    <tr>
+								   <td><input type="checkbox" ng-model="myVar" value="Rice">Rice</td>
+									<td><input type="checkbox" ng-model="myVar" value="Navratna-Dal">Navratna Dal</td>
+								<tr>
+									<td><input type="checkbox" ng-model="myVar" value="Sambhar">Sambhar</td>
+									<td><input type="checkbox" ng-model="myVar" value="Rava Ladoo">Rava Ladoo</td>
+						        </tr>
+								 <tr>
+								    <td><input type="checkbox" ng-model="myVar" value="Chutney">Chutney</td>
+									<td><input type="checkbox" ng-model="myVar" value="Chilli Paneer">Chilli Paneer</td>
+							   </tr>
+								<tr>
+									<td><input type="checkbox" ng-model="myVar" value="Vegetable-Rice">Vegetable Rice</td>
+									<td><input type="checkbox" ng-model="myVar" value="Paneer-Kofta">Paneer Kofta</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" ng-model="myVar" value="Mixed-Veg">Mixed-Veg</td>
+									<td><input type="checkbox" ng-model="myVar" value="Sweet-Rice">Sweet-Rice</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" ng-model="myVar" value="Rasam">Rasam</td>
+									<td><input type="checkbox" ng-model="myVar" value="Palakn-Paneer">Palakn Paneer</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" ng-model="myVar" value="Idli-Sambhar">Idli Sambhar</td>
+									<td><input type="checkbox" ng-model="myVar" value="Pondal">Pondal</td>
+							</tbody>
+						</table>
+							<center><input type="button" value="Add"></input></center>
+						</div>
+					</div>
+				   </md-content>
+				  </md-tab>
+				      <md-tab label="Dinner">
+				        <md-content class="md-padding">
+				          <h1 class="md-display-2">Dinner</h1>
+				          <div class="row">
+				          	<div class="col-lg-6">
+				          		
+							<table class="table">
+								<tbody>
+								<tr>
+							    	<td><input type="checkbox" ng-model="myVar" value="Biryani">Biryani</td>
+									<td><input type="checkbox" ng-model="myVar" value="Raita">Raita</td>
+								</tr>
+							    <tr>
+								   <td><input type="checkbox" ng-model="myVar" value="Hot-and-Sour-Soup">Hot and Sour Soup</td>
+									<td><input type="checkbox" ng-model="myVar" value="Paratha">Paratha</td>
+								<tr>
+									<td><input type="checkbox" ng-model="myVar" value="Upma">Upma</td>
+									<td><input type="checkbox" ng-model="myVar" value="Rava Ladoo">Yagurt Rice</td>
+						        </tr>
+								 <tr>
+								    <td><input type="checkbox" ng-model="myVar" value="Fried-Rice">Fried Rice</td>
+									<td><input type="checkbox" ng-model="myVar" value="Coconut Rice">Coconut Rice</td>
+							   </tr>
+								<tr>
+									<td><input type="checkbox" ng-model="myVar" value="Wheat Pasta">Wheat Pasta</td>
+									<td><input type="checkbox" ng-model="myVar" value="Milk with Sugar, turmeric">Milk with Sugar, turmeric</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" ng-model="myVar" value="Italian Soup">Italian Soup</td>
+									<td><input type="checkbox" ng-model="myVar" value="Pickle">Pickle</td>
+								</tr>	
+							</tbody>
+						</table>
+							<center><input type="button" value="Confirm"></input></center>
+					</div>
+				        </md-content>
+				      </md-tab>
+				      <md-tab label="Report">
+				        <md-content class="md-padding">
+				          <h1 class="md-display-2">Report</h1>
+				          
+				        </md-content>
+				      </md-tab>
+				      <md-tab label="Cooking Team">
+				        <md-content class="md-padding">
+				          <h1 class="md-display-2">Tab Three</h1>
+				          <div class="col-md-6">
+				          	<table class="table">
+				          		<tbody>
+				          			<tr>
+				          				<td>Name</td>
+				          				<td><input type="text"></td>
+				          			</tr>
+				          			<tr>
+				          				<td>Contact Number</td>
+				          				<td><input type="text"></td>
+				          			</tr>
+				          			<tr>
+				          				<td>Email Id</td>
+				          				<td><input type="text"></td>
+				          			</tr>
+				          			<tr>
+				          				<td>Charges</td>
+				          				<td><input type="text"></td>
+				          			</tr>
+				          			<tr>
+				          				<td><input type="button" value="Add"></td>
+				          			</tr>
+				          			
+				          		</tbody>
+				          	</table>
+				          		<center><input type="button" value="Add"></input></center>
+				          </div>
+				        </md-content>
+				      </md-tab>
+				    </md-tabs>
+				  
+				</div>
+        	</div>
+        <div class="col-lg-3"></div>
+    </div>
+</body>
+</html>

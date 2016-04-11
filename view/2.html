@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Case</title>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <link rel="stylesheet" href="bower_components/bootstrap-vertical-tabs/bootstrap.vertical-tabs.css">
+
+   <!-- For Font Awesome Icons-->
+      <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+
+
+      <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+   
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <style type="text/css">
+      /* custom inclusion of right, left and below tabs */
+
+.tabs-below > .nav-tabs,
+.tabs-right > .nav-tabs,
+.tabs-left > .nav-tabs {
+  border-bottom: 0;
+}
+
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+  display: none;
+}
+
+.tab-content > .active,
+.pill-content > .active {
+  display: block;
+}
+
+.tabs-below > .nav-tabs {
+  border-top: 1px solid #ddd;
+}
+
+.tabs-below > .nav-tabs > li {
+  margin-top: -1px;
+  margin-bottom: 0;
+}
+
+.tabs-below > .nav-tabs > li > a {
+  -webkit-border-radius: 0 0 4px 4px;
+     -moz-border-radius: 0 0 4px 4px;
+          border-radius: 0 0 4px 4px;
+}
+
+.tabs-below > .nav-tabs > li > a:hover,
+.tabs-below > .nav-tabs > li > a:focus {
+  border-top-color: #ddd;
+  border-bottom-color: transparent;
+}
+
+.tabs-below > .nav-tabs > .active > a,
+.tabs-below > .nav-tabs > .active > a:hover,
+.tabs-below > .nav-tabs > .active > a:focus {
+  border-color: transparent #ddd #ddd #ddd;
+}
+
+.tabs-left > .nav-tabs > li,
+.tabs-right > .nav-tabs > li {
+  float: none;
+}
+
+.tabs-left > .nav-tabs > li > a,
+.tabs-right > .nav-tabs > li > a {
+  min-width: 74px;
+  margin-right: 0;
+  margin-bottom: 3px;
+}
+
+.tabs-left > .nav-tabs {
+  float: left;
+  margin-right: 19px;
+  border-right: 1px solid #ddd;
+}
+
+.tabs-left > .nav-tabs > li > a {
+  margin-right: -1px;
+  -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
+}
+
+.tabs-left > .nav-tabs > li > a:hover,
+.tabs-left > .nav-tabs > li > a:focus {
+  border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+}
+
+.tabs-left > .nav-tabs .active > a,
+.tabs-left > .nav-tabs .active > a:hover,
+.tabs-left > .nav-tabs .active > a:focus {
+  border-color: #ddd transparent #ddd #ddd;
+  *border-right-color: #ffffff;
+}
+
+
+
+
+
+
+
+    </style>
+
+  </head>
+<body ng-app="myapp">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+   
+    <span class="glyphicon glyphicon-menu-hamburger"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Yatra Details</a></li>
+    <li><a href="#">Area Coordinator</a></li>
+    <li><a href="view/food_cordinator.html">Kichent Coordinator</a></li>
+    <li><a href="#">Transport Coordinator</a></li>
+      <li><a href="#">Hotel Coordinator</a></li>
+  </ul>
+</div>
+  </nav>
+<br><br>
+<div class="container">
+    <div class="row">
+      <!-- tabs left -->
+      <div class="tabbable tabs-left">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#a" data-toggle="tab">Dwarka</a></li>
+          <li><a href="#b" data-toggle="tab">Somnath</a></li>
+          <li><a href="#c" data-toggle="tab">Nathdwara</a></li>
+        </ul>
+        <div class="tab-content">
+         <div class="tab-pane active" id="a">
+            
+            <div class="container" ng-controller="mainController">
+  
+              <div class="row"><br>
+                <div class="col-lg-4">
+  
+                  Search by Family-Head
+                  <input type="text" class="form-control" placeholder="Search by Head-Name" ng-model="searchFish">
+                   <table class="table table-bordered" >
+    
+                    <thead>
+                      <tr>
+
+                        <td >
+                          <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                            Family-Head
+                            <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+                          </a>
+                        </td>
+
+                        <td>
+                          <a href="#" ng-click="sortType = 'fish'; sortReverse = !sortReverse">
+                          Person-Name 
+                            <span ng-show="sortType == 'fish' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'fish' && sortReverse" class="fa fa-caret-up"></span>
+                          </a>
+                        </td>
+
+                        <td >
+                          <a href="#" ng-click="sortType = 'tastiness'; sortReverse = !sortReverse">
+                          Hotel-Name 
+                            <span ng-show="sortType == 'tastiness' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'tastiness' && sortReverse" class="fa fa-caret-up"></span>
+                          </a>
+                        </td>
+
+                         <td >
+                          <a href="#" ng-click="sortType = 'tastiness'; sortReverse = !sortReverse">
+                          Room-No 
+                            <span ng-show="sortType == 'tastiness' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'tastiness' && sortReverse" class="fa fa-caret-up"></span>
+                          </a>
+                        </td>
+                      </tr>
+                    </thead>
+                    
+                    <tbody>
+                      <tr ng-repeat="roll in sushi | orderBy:sortType:sortReverse | filter:searchFish">
+                        <td>{{ roll.name }}</td>
+                        <td>{{ roll.fish }}</td>
+                        <td>{{ roll.tastiness }}</td>
+                        <td>{{ roll.tasti }}</td>
+                      </tr>
+                    </tbody>
+                    
+                  </table>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+         <div class="tab-pane" id="b">
+          <div class="container"  ng-controller="mainController">
+  
+              <div class="row"><br>
+                <div class="col-lg-4">
+  
+                  Search by Head-Name
+                  <input type="text" class="form-control" placeholder="Search by Head-Name" ng-model="searchFish">
+                   <table class="table table-bordered" >
+    
+                    <thead>
+                      <tr>
+
+                        <td >
+                          <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                            Family-Head 
+                            <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+                          </a>
+                        </td>
+
+                        <td>
+                          <a href="#" ng-click="sortType = 'fish'; sortReverse = !sortReverse">
+                          Person-Name 
+                            <span ng-show="sortType == 'fish' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'fish' && sortReverse" class="fa fa-caret-up"></span>
+                          </a>
+                        </td>
+
+                        <td >
+                          <a href="#" ng-click="sortType = 'tastiness'; sortReverse = !sortReverse">
+                          Hotel-Name 
+                            <span ng-show="sortType == 'tastiness' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'tastiness' && sortReverse" class="fa fa-caret-up"></span>
+                          </a>
+                        </td>
+
+                        <td >
+                          <a href="#" ng-click="sortType = 'tastiness'; sortReverse = !sortReverse">
+                          Room-No 
+                            <span ng-show="sortType == 'tastiness' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'tastiness' && sortReverse" class="fa fa-caret-up"></span>
+                          </a>
+                        </td>
+                      </tr>
+                    </thead>
+                    
+                    <tbody>
+                      <tr ng-repeat="rol in sus | orderBy:sortType:sortReverse | filter:searchFish">
+                        <td>{{ rol.name }}</td>
+                        <td>{{ rol.fish }}</td>
+                        <td>{{ rol.tastiness }}</td>
+                        <td>{{ rol.tasti }}</td>
+                      </tr>
+                    </tbody>
+                    
+                  </table>
+                </div>
+
+              </div>
+            </div>
+</div>
+
+         <div class="tab-pane" id="c">
+          <div class="container"  ng-controller="mainController">
+  
+              <div class="row"><br>
+                <div class="col-lg-4">
+  
+                  Search by Head-Name
+                  <input type="text" class="form-control" placeholder="Search by Head-Name" ng-model="searchFish">
+                   <table class="table table-bordered" >
+    
+                    <thead>
+                      <tr>
+
+                        <td >
+                          <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                            Family-Head 
+                            <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+                          </a>
+                        </td>
+
+                        <td>
+                          <a href="#" ng-click="sortType = 'fish'; sortReverse = !sortReverse">
+                          Person-Name 
+                            <span ng-show="sortType == 'fish' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'fish' && sortReverse" class="fa fa-caret-up"></span>
+                          </a>
+                        </td>
+
+                        <td >
+                          <a href="#" ng-click="sortType = 'tastiness'; sortReverse = !sortReverse">
+                          Hotel-Name 
+                            <span ng-show="sortType == 'tastiness' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'tastiness' && sortReverse" class="fa fa-caret-up"></span>
+                          </a>
+                        </td>
+
+                        <td >
+                          <a href="#" ng-click="sortType = 'tastiness'; sortReverse = !sortReverse">
+                          Room-No 
+                            <span ng-show="sortType == 'tastiness' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'tastiness' && sortReverse" class="fa fa-caret-up"></span>
+                          </a>
+                        </td>
+                      </tr>
+                    </thead>
+                    
+                    <tbody>
+                      <tr ng-repeat="ro in su | orderBy:sortType:sortReverse | filter:searchFish">
+                        <td>{{ ro.name }}</td>
+                        <td>{{ ro.fish }}</td>
+                        <td>{{ ro.tastiness }}</td>
+                        <td>{{ ro.tasti }}</td>
+                      </tr>
+                    </tbody>
+                    
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /tabs -->
+      
+    </div>
+    
+     <script type="text/javascript">
+      angular.module('myapp', [])
+
+      .controller('mainController', function($scope) {
+        $scope.sortType     = 'name'; // set the default sort type
+        $scope.sortReverse  = false;  // set the default sort order
+        $scope.searchFish   = '';     // set the default search/filter term
+        
+        // create the list of sushi rolls 
+        $scope.sushi = [
+          { name: 'Cali Roll', fish: 'Crab', tastiness: 2 , tasti:'Abcd'},
+          { name: 'Philly', fish: 'Tuna', tastiness: 4,tasti:'Abcd' },
+          { name: 'Tiger', fish: 'Eel', tastiness: 7,tasti:'Abcd' },
+          { name: 'Rainbow', fish: 'Variety', tastiness: 6,tasti:'Abcd' }
+        ];
+
+        $scope.sus = [
+          { name: 'Roll', fish: 'sorb', tastiness: 10, tasti:'Abcd' },
+          { name: 'Philly', fish: 'Tuna', tastiness: 14, tasti:'Abcd' },
+          { name: 'Tiger', fish: 'Eel', tastiness: 17, tasti:'Abcd' },
+          
+        ];
+        
+        $scope.su = [
+          { name: 'Roll', fish: 'sorb', tastiness: 10, tasti:'Abcd' },
+          { name: 'Philly', fish: 'Tuna', tastiness: 14, tasti:'Abcd' },
+          
+        ];
+      });
+
+     </script>
+</body>
+
+</html>
