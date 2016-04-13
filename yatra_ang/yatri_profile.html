@@ -1,0 +1,163 @@
+<!-- Author: Sonali Nimbola
+Date: 21 march-2016
+Date updated: 22 march 2016
+purose: Yatri Profile Page -->
+
+<html ng-app="Admin">
+	<head>
+		<title>
+			Profile page
+		</title>
+		<script type="text/javascript" src="C:/Users/user/Desktop/yatra/angular/angular.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+		<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+		
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+
+		<link rel="stylesheet" type="text/css" href="yatri.css">
+		<script type="text/javascript" src="yatri.js"></script>
+		
+	</head>
+	<body class="main" style="background-color: #eee"  ng-controller="AdminController">
+		<form>
+			<nav class="navbar navbar-inverse navbar-center navbar-fixed-top">
+  			<center>Profile</center>
+			</nav>
+			<div class="row">
+				<div class="col-lg-3"></div>
+				<div class="col-lg-6">
+				    <div class="panel panel-default">
+				    <div class="panel panel-heading" id="panelhead">Fill Information</div>
+				     	<div class="panel panel-body">
+				     	    <div class="row">
+				     	    	<div class="col-lg-4" id="labels">
+					     			<label>First Name</label>
+						        </div>
+						        <div class="col-lg-8">
+						        	<input type="text" ng-model="first_name" class="form-control" aria-describedby="sizing-addon3"/><br>
+						        </div>
+				     	    </div>
+
+				     	     <div class="row">
+				     	    	<div class="col-lg-4" id="labels">
+					     			<label>Last Name</label>
+						        </div>
+						        <div class="col-lg-8">
+						        	<input type="text" ng-model="last_name" class="form-control" aria-describedby="sizing-addon3"/><br>
+				     	        </div>
+				     	     </div> 
+
+
+				     	     <div class="row">
+				     	    	<div class="col-lg-4" id="labels">
+					     			<label>Initiated Name</label>
+						        </div>
+						        <div class="col-lg-8">
+						        	<input type="text" ng-model="initiated_name" class="form-control" aria-describedby="sizing-addon3"/><br>
+				     	        </div>
+				     	     </div> 
+
+				     	      <div class="row">
+				     	    	<div class="col-lg-4" id="labels">
+					     			<label>Date of Birth</label>
+						        </div>
+						        <div class="col-lg-8">
+						        	<input type="date" ng-model="date_of_birth" class="form-control" aria-describedby="sizing-addon3"/><br>
+				     	        </div>
+				     	     </div> 
+
+				     	     <div class="row">
+				     	    	<div class="col-lg-4" id="labels">
+					       			<label>Street</label>
+						        </div>
+						        <div class="col-lg-8">
+						        	<input type="text" ng-model="street" class="form-control" aria-describedby="sizing-addon3"/><br>
+				     	        </div>
+				     	     </div> 
+
+				     	     <div class="row">
+				     	    	<div class="col-lg-4" id="labels">
+					     			<label>City</label>
+						        </div>
+						        <div class="col-lg-8">
+						        	<input type="text" ng-model="city" class="form-control" aria-describedby="sizing-addon3"/><br>
+				     	        </div>
+				     	     </div> 
+
+				     	     <div class="row">
+				     	    	<div class="col-lg-4" id="labels">
+					     			<label>State</label>
+						        </div>
+						        <div class="col-lg-8">
+						        	<input type="text" ng-model="state" class="form-control" aria-describedby="sizing-addon3"/><br>
+				     	        </div>
+				     	     </div> 
+
+				     	     <div class="row">
+				     	    	<div class="col-lg-4" id="labels">
+					     			<label>Country</label>
+						        </div>
+						        <div class="col-lg-8">
+						        	<input type="text" ng-model="country" class="form-control" aria-describedby="sizing-addon3"/><br>
+				     	        </div>
+				     	     </div> 
+
+				     	     <div class="row">
+				     	    	<div class="col-lg-4" id="labels">
+					     			<label>Email Id</label>
+						        </div>
+						        <div class="col-lg-8">
+						        	<input type="email" ng-model="email_id" class="form-control" aria-describedby="sizing-addon3"/><br>
+				     	        </div>
+				     	     </div> 
+
+				     	     <div class="row">
+				     	    	<div class="col-lg-4" id="labels">
+					     			<label>Gender</label>
+						        </div>
+						        <div class="col-lg-8">
+						        	<p><input type="radio" ng-model="gender"/>Male</p>
+						        	<p><input type="radio" ng-model="gender"/>Female</p>
+				     	        </div>
+				     	     </div> 
+
+				     	     <div class="row">
+				     	    	<div class="col-lg-4" id="labels">
+					     			<label>Contact Number</label>
+						        </div>
+						        <div class="col-lg-8">
+						        	<input type="number" ng-model="contact_number" class="form-control" aria-describedby="sizing-addon3"/><br>
+				     	        </div>
+				     	     </div> 
+
+				     	     <div class="row">
+				     	    	<div class="col-lg-4" id="labels">
+					     			<label>Indian Conatct Number</label>
+						        </div>
+						        <div class="col-lg-8">
+						        	<input type="number" ng-model="indian_contact_number" class="form-control" aria-describedby="sizing-addon3"/><br>
+				     	        </div>
+				     	     </div> 
+
+				     	     <div class="row">
+				     	    	<div class="col-lg-4" id="labels">
+					     			<label>Emergency Contact Number</label>
+						        </div>
+						        <div class="col-lg-8">
+						        	<input type="number" ng-model="emergency_contact_number" class="form-control" aria-describedby="sizing-addon3"/><br>
+				     	        </div>
+				     	     </div> 
+						     <center><input type="button" value="ADD" ng-click="profile()" class="btn btn-default"></input></center>
+						    </div>
+				     	</div>
+				    </div>
+				<div class="col-lg-3"></div>
+				</div>
+				
+			</div>
+			<label>{{info}}</label>
+		  </form>
+		</div>
+	</body>
+</html>

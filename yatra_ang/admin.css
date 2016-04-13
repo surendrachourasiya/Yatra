@@ -1,0 +1,30 @@
+/*Author: Sonali Nimbola
+Date: 21 march 2016
+Purpose: css coding of add new yatra page*/
+
+.main{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.navbar center{
+	color: white;
+	font-size: 180%;
+	float: auto;
+}
+
+#labels
+{
+	font-size: 140%;
+}
+
+.btn{
+	background: #505050;
+	color: white;
+}
+
+#panelhead{
+	background: #505050;
+	color: white;
+	font-size: 110%;
+}

@@ -1,0 +1,141 @@
+<!-- Author: Sonali Nimbola
+Date: 23 march-2016
+Date updated: 
+purose: Yatri Profile Page -->
+
+<html>
+	<head>
+		<title>
+			Profile page
+		</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+  <!-- Your application bootstrap  -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" </script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="family_member.css">
+		<script type="text/javascript" src="family_member.js"></script>
+		
+	</head>
+
+  <body ng-app="yatriapp" ng-cloak style="background-color: #eee">
+   <div style="margin-top: 4%">
+       <nav class="navbar navbar-inverse navbar-center navbar-fixed-top">
+          <center>Family Member</center>
+      </nav>
+  </div>
+  <div>
+  <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+        <div ng-cloak>
+        <md-content>
+          <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Home">
+              <md-content class="md-padding">
+                 <h1>HOME</h1>
+              </md-content>
+            </md-tab>
+            <md-tab label="View Profile">
+              <md-content class="md-padding">
+                <h4 class="md-display-2">View Profile</h4>
+                <div ng-controller="repeatController">
+                    I have {{family.length}} family member. They are:
+                    <input type="search" ng-model="q" placeholder="filter..." aria-label="filter" /><br>
+                    <ul class="example-animate-container">
+                      <li class="animate-repeat" ng-repeat="member in family | filter:q as results">
+                        <div class="row">
+                            <div class="col-lg-3">
+                            <!-- [{{$index + 1}}] --> {{member.name}}
+                            </div>
+                            <div class="col-lg-2">
+                                <a href="yatri_profile.html">Update</a>
+                            </div>
+                            <div class="col-lg-2">
+                              <a href="#">Delete</a>
+                            </div>
+                        </div>
+                      </li>
+                      <li class="animate-repeat" ng-if="results.length == 0">
+                        <strong>No results found...</strong>
+                      </li>
+                    </ul><br><br>
+                       <b>Add New Member          </b><a href="yatri_profile.html" class="profilelink">+</a>
+                </div>
+              </md-content>
+            </md-tab>
+            <md-tab label="Preference">
+              <md-content class="md-padding">
+                <h6 class="md-display-2">Add Preference</h6>
+                <table>
+                    <tr>
+                          <td><b>Train Preference</b></td>
+                          <!-- <td  class="preference_table">first:</td>
+                          <td>  
+
+                                <div class="md-menu-demo menudemoBasicUsage" ng-controller="BasicDemoCtrl as ctrl" ng-cloak="">
+                                  <div class="menu-demo-container" layout-align="center center" layout="column" ng-controller="BasicDemoCtrl">
+                                
+                                  <md-menu>
+                                    <md-button ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+                                          <img src="arrow.jpg" class="train-first-preference">
+                                    </md-button>
+                                    <md-menu-content width="5">
+                                          <md-menu-item>
+                                            <md-button>Redial</md-button>
+                                          </md-menu-item>
+
+                                          <md-menu-item>
+                                            <md-button>Check voicemail</md-button>
+                                          </md-menu-item>
+
+                                          <md-menu-item>
+                                            <md-button>notifications</md-button>
+                                          </md-menu-item>
+
+                                    </md-menu-content>
+                                  </md-menu>
+                                </div>
+                               </div> 
+                          </td> -->
+                          <td><div ng-controller="SubjectDropDownController">
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            Subject
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                            <li ng-repeat="a in subjects"><a href="#">{{a}}<a></li>
+                                        </ul>
+                                    </div>
+                                </div></td>
+                    </tr>
+                    <tr><td>Hotel Preference</td><td></td></tr>
+                    <tr><td>Room Preference</td><td></td></tr>
+                </table>
+              </md-content>
+            </md-tab>
+          </md-tabs>
+        </md-content>
+      </div>
+      </div>
+</div>
+</div>
+</body>
+</html>
+	

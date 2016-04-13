@@ -1,0 +1,105 @@
+<!-- Author: Sonali Nimbola
+Date: 21 march-2016
+purose: Add new yatra -->
+
+<html ng-app="Admin">
+	<head>
+		<title>
+			Add New Yatra
+		</title>
+         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+		<!-- <script type="text/javascript" src="admin.js"></script> -->
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" </script>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="admin.css">
+		<script type="text/javascript" src="admin.js"></script>
+	</head>
+	<body class="main" style="background-color: #eee"  ng-controller="AdminController">
+		<form>
+			<nav class="navbar navbar-inverse navbar-center navbar-fixed-top">
+  				<center>Add New yatra</center>
+			</nav>
+			
+			<div class="row">
+				<div class="col-lg-3"></div>
+				<div class="col-lg-6">
+				     <div class="panel panel-default">
+				     	<div class="panel panel-heading" id="panelhead">Fill Information</div>
+				     	<div class="panel panel-body">
+				     	    <div class="row">
+				     	    	<div class="col-lg-4" id="labels">
+					     			<label>Yatra Name</label>
+						        </div>
+						        <div class="col-lg-8">
+						        	<input type="text" ng-model="yatra_name" class="form-control" aria-describedby="sizing-addon3"/><br>
+						        </div>
+				     	    </div>
+
+				     	     <div class="row">
+				     	    	<div class="col-lg-4" id="labels">
+					     			<label>Places to be Visited</label>
+						        </div>
+						        <div class="col-lg-8">
+						        	<input type="text" ng-model="places_to_be_visited" class="form-control" aria-describedby="sizing-addon3"/><br>
+				     	        </div>
+				     	     </div> 
+
+
+				     	     <div class="row">
+				     	    	<div class="col-lg-4" id="labels">
+					     			<label>Advanced Payment</label>
+						        </div>
+						        <div class="col-lg-8">
+						        	<input type="number" ng-model="advanced_payment" class="form-control"/><br>
+				     	        </div>
+				     	     </div> 
+
+				     	     <div class="row">
+				     	    	<div class="col-lg-4" id="labels">
+					     			<label data-toggle="tooltip" title="Hooray!">Total Payment</label>
+						        </div>
+						        <div class="col-lg-8">
+						        	<input type="number" ng-model="total_payment" class="form-control" aria-describedby="sizing-addon3"/><br>
+				     	        </div>
+				     	     </div> 
+
+						     <center><input type="button" value="ADD" ng-click="yatraAdd()" class="btn btn-default"></input></center>
+
+						    </div>
+
+				     	</div>
+
+				 </div>
+				<div class="col-lg-3"><label>{{info}}</label></div>
+				</div>
+				
+			</div>
+			<div class="container">
+  <h3>Tooltip Example</h3>
+  <a href="#" data-toggle="tooltip" title="Hooray!">Hover over me</a>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+/*$(document).ready(function () {
+
+    $('input[id=password]').tooltip({'trigger':'focus'});
+});*/
+</script>
+<input id="password" type="password" />
+
+			</form>
+		</div>
+	</body>
+</html>

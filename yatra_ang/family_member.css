@@ -1,0 +1,91 @@
+/*Author: Sonali Nimbola
+Date: 22 march 2016
+Purpose: css coding of family member page*/
+
+.main{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+/*for navbar*/
+.navbar center{
+	color: white;
+	font-size: 180%;
+	float: auto;
+}
+/*style for add new member link */
+.profilelink{
+	background-color: black;
+	color: white;
+	font-size: 200%;
+	border-radius: 50%;
+}
+
+ /*.menu-demo-container {
+  min-height: 200px; }*/
+
+/*styling for tabs*/
+
+.tabsdemoDynamicHeight md-content {
+	 /*background-color: #42A5F5;*/
+  background-color: transparent !important; 
+  }
+  .tabsdemoDynamicHeight md-content md-tabs {
+    background: #f6f6f6;
+    border: 1px solid #e1e1e1; 
+  }
+    .tabsdemoDynamicHeight md-content md-tabs md-tabs-wrapper {
+      background: #42A5F5;
+  }
+  .tabsdemoDynamicHeight md-content h1:first-child {
+    margin-top: 0;
+   }
+
+ /*styling for list of family member*/
+   .example-animate-container {
+  background:white;
+  
+  list-style:none;
+  margin:0;
+  padding:0 10px;
+}
+
+.animate-repeat {
+  line-height:30px;
+  list-style:none;
+  box-sizing:border-box;
+}
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  transition:all linear 0.5s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity:0;
+  max-height:0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:30px;
+}
+
+/*styling for preference drop down icon*/
+
+.train-first-preference{
+	width: 25%;
+	height: 25%;
+}
+/*
+styling for preference table*/
+
+.preference_table{
+padding-left: 30%;
+
+}

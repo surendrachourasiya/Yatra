@@ -1,0 +1,839 @@
+A<!-- Author: Sonali Nimbola
+Date: 23 march-2016
+Date updated: 
+purose: Yatri Profile Page -->
+
+<html>
+	<head>
+		<title>
+			Transport page
+		</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Angular Material style sheet -->
+      <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+      <!-- Angular Material requires Angular.js Libraries -->
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+      <!-- Angular Material Library -->
+      <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+
+      <!-- Your application bootstrap  -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  
+  
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" </script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Xeditable library -->
+        
+        <link href="../bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
+        <script src="../bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+        <script src="../angular-1.5.3/angular-mocks.js"></script>
+
+        <!--    js and css coding for this page -->
+    		<link rel="stylesheet" type="text/css" href="Transport.css">
+    		<script type="text/javascript" src="Transport.js"></script>
+
+      <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+
+
+
+	</head>
+  
+  <body ng-app="TransportApp" ng-cloak style="background-color: #eee">
+  <table class="table" style="padding-top: 20%">
+  <tr><td>
+   <div>
+       <nav class="navbar navbar-inverse navbar-center navbar-fixed-top">
+          <center>Transport</center>
+      </nav>
+  </div>
+  </td></tr><br>
+  <tr><td>
+  
+  <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+        <div ng-cloak>
+        <md-content>
+          <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Home">
+              <md-content class="md-padding">
+                 <h1>HOME</h1>
+              </md-content>
+            </md-tab>
+            <md-tab label="Details of Attendies">
+              <md-content class="md-padding">
+                <h4 class="md-display-1">Details of attendies</h4>
+
+              </md-content>
+            </md-tab>
+            <md-tab label="Add Vehicle">
+              <md-content class="md-padding">
+                    <div class="panel panel-heading" id="panelhead">Add Vehicle</div>
+                    <div ng-controller="AddVehicle">
+                    <form ng-submit="addName()" >
+                          <div class="panel panel-body" >
+                                <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label>Date</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <input type="date" ng-model="date" class="form-control" aria-describedby="sizing-addon3"/><br>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label>Type of Vehicle</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="btn-group" data-toggle="buttons">
+                                             <input type="radio" ng-model="type" value="car" /> Car<br> <input type="radio" ng-model="type" value="bus"/> Bus 
+                                             <br><br>
+                                       </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label>Vehicle Number</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <input type="text" ng-model="vehicle_number" class="form-control" aria-describedby="sizing-addon3"  /><br>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label>Total Seat</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <input type="number" ng-model="total_seat" class="form-control" aria-describedby="sizing-addon3"  /><br>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label> Transport Office Detail </label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <br><br>
+                                    </div>
+                                  </div>
+
+                                   <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label> Name </label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <input type="text" ng-model="trans_name" class="form-control" aria-describedby="sizing-addon3"  /><br>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label>Address</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <input type="text" ng-model="trans_address" class="form-control" aria-describedby="sizing-addon3"  /><br>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label>Contact Number</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <input type="text" ng-model="trans_contact_number" class="form-control" aria-describedby="sizing-addon3"  /><br>    
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label>Driver Name</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <input type="text" ng-model="driver_name" class="form-control" aria-describedby="sizing-addon3"  /><br>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label>Driver Contact Number</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <input type="number" ng-model="driver_contact_number" class="form-control" aria-describedby="sizing-addon3"  /><br>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label>Cost Per Day</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <input type="number" ng-model="pay" class="form-control" aria-describedby="sizing-addon3"  /><br>
+                                    </div>
+                                  </div>
+                                  <input type="submit" value="Add">
+                          </div>
+                          </form>
+                          
+                          <div>
+                              <table border="1">
+                                  <thead>
+                                    <th>Date</th>
+                                    <th>Type</th>
+                                    <th>Cost</th>
+                                    
+                                  </thead>
+                                    <tr ng-repeat="userdetail in userdetails">
+                                    <td>{{userdetail.tdate}}</td>
+                                    <td>{{userdetail.ttype}}</td>
+                                    <td>{{userdetail.tpay}}</td> 
+                                    </tr>
+                                </table>
+                          </div>
+                          </div>
+                    
+              </md-content>
+            </md-tab>
+         
+          <md-tab label="Search Vehicle">
+              <md-content class="md-padding">
+                 <div class="panel panel-heading" id="panelhead">Search Vehicle</div>
+                          <div class="panel panel-body">
+                               <div class="panel panel-body">
+
+                                    <div ng-controller="editablectrl">
+                                       <form editable-form name="editableForm" onaftersave="saveUser()">
+                                          <div class="row">
+                                              <div class="col-lg-4" id="labels">
+                                              <label>Vehicle Number</label>
+                                              </div>
+                                              <div class="col-lg-8">
+                                                <input type="text" ng-model="vehicle_number" class="form-control" aria-describedby="sizing-addon3"  /><br>
+                                                <button>Search</button><br><br>
+                                              </div>
+                                            </div>
+
+                                          <div class="row">
+                                              <div class="col-lg-4" id="labels">
+                                              <label>Date</label>
+                                              </div>
+                                              <div class="col-lg-8">
+                                                 <span editable-text="vehicle.date" e-name="date"  e-required>{{ vehicle.date || 'empty' }}
+
+                                                <br>
+                                              </div>
+                                          </div>
+
+                                          <div class="row">
+                                              <div class="col-lg-4" id="labels">
+                                              <label>Type of Vehicle</label>
+                                              </div>
+                                              <div class="col-lg-8">
+                                                 <span editable-text="vehicle.type" e-name="type"  e-required>{{ vehicle.type || 'empty' }}
+                                                 <br>
+                                              </div>
+                                          </div>
+
+                                         <div class="row">
+                                              <div class="col-lg-4" id="labels">
+                                              <label>Total Seat</label>
+                                              </div>
+                                              <div class="col-lg-8">
+                                                <span editable-text="vehicle.seat" e-name="seat"  e-required>{{ vehicle.seat || 'empty' }}
+                                                 <br>
+                                              </div>
+                                         </div >
+
+                                         <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label> Transport Office Detail </label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <br><br>
+                                    </div>
+                                  </div>
+
+                                   <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label> Name </label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <span editable-text="vehicle.officename" e-name="officename"  e-required>{{ vehicle.officename || 'empty' }}<br>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label>Address</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <span editable-text="vehicle.officeaddress" e-name="officeaddress"  e-required>{{ vehicle.officeaddress || 'empty' }}<br>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label>Contact Number</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <span editable-text="vehicle.officecontact" e-name="officecontact"  e-required>{{ vehicle.officecontact || 'empty' }}<br>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label>Driver Name</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <span editable-text="vehicle.drivername" e-name="drivername"  e-required>{{ vehicle.drivername || 'empty' }}<br>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label>Driver Contact Number</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <span editable-text="vehicle.drivercontact" e-name="drivercontact"  e-required>{{ vehicle.drivercontact || 'empty' }}<br>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label>Cost Per Day</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <span editable-text="vehicle.cost" e-name="cost"  e-required>{{ vehicle.cost || 'empty' }}<br>
+                                    </div>
+                                  </div>  
+                                          
+
+                                          <div>
+                                            <!-- button to show form -->
+                                            <button type="button" class="btn btn-default" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
+                                              Edit
+                                            </button>
+                                            <!-- buttons to submit / cancel form -->
+                                            <span ng-show="editableForm.$visible">
+                                              <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting">
+                                                Save
+                                              </button>
+                                              <button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">
+                                                Cancel
+                                              </button>
+                                            </span>
+                                          </div>
+                                        </form>  
+                                      </div>
+
+                          </div>
+                    
+                          </div>
+               
+              </md-content>
+            </md-tab>
+
+            <!-- ============Allocate vehicle tab============= -->
+         
+          <md-tab label="Allocate Vehicle">
+              <md-content class="md-padding">
+                    
+                     
+                      <!-- tabs left -->
+                            <div class="tabable tabs-left">
+                              <ul class="nav nav-tabs">
+                                <li class="active"><a href="#car" data-toggle="tab">Car</a></li>
+                                <li><a href="#bus" data-toggle="tab">Bus</a></li>
+                              </ul>
+                              <div class="row">
+                              <div class="tab-content">
+                     <!--  -------------------------------for car --------------------------- -->
+                               <div class="tab-pane active" id="car">
+                                               
+                                                  <div class="col-lg-6">
+                                                      <div ng-controller="AllocateVehicleCarYatriDetail">
+                                                <table class="allocatetable">
+                                                    <thead>
+                                                       <th>Family Head Name</th>
+                                                       <th>Number of person</th>
+                                                       <th>Share</th>
+                                                       <th>Status</th>
+                                                    </thead>
+                                                    <tr ng-repeat="userdetail in userdetails">
+                                                        <td>{{userdetail.tfamily_head}}</td>
+                                                        <td>{{userdetail.ttotal_person}}</td>
+                                                        <td>{{userdetail.tshare}}</td>
+                                                        <td>{{userdetail.tbook}}</td> 
+                                                    </tr>
+
+                                                </table>
+                                                </div>
+                                                <br><br>
+                                              
+                                              <div ng-controller="AllocateVehicleCarDetail">
+                                                <table class="allocatetable">
+                                                    <thead>
+                                                       <th>Car Number</th>
+                                                       <th>Seat</th>
+                                                       <th>Status(Booked/Not Booked)</th>
+                                                       
+                                                    </thead>
+                                                    <tr ng-repeat="cardetail in cardetails">
+                                                        <td>{{cardetail.tcar_number}}</td>
+                                                        <td>{{cardetail.tseat}}</td>
+                                                        <td>{{cardetail.tstatus}}</td>
+                                                        
+                                                    </tr>
+
+                                                </table>
+                                              </div>
+                                               </div>
+                                                <div class="lg-col-3">
+                                                      <label>For Car allocation enter car number</label>
+                                                      <input type="text" ng-model="car_number"/><br><br>
+                                                      <label> and family head name</label>
+                                                      <input type="text" ng-model="family_head"/><br><br>
+                                                      <input type="submit" value="Allocate"/>
+                                                
+                                                </div>
+                                                </div>
+
+                              <!-- ------------------------------Bus Allocation ----------------------------- -->
+
+
+                               <div class="tab-pane" id="bus">
+                                      
+
+                                             <div class="row">
+                                                <div class="col-lg-6">
+                                                <div ng-controller="AllocateVehicleBusYatriDetail">
+                                              <table class="allocatetable">
+                                                  <thead>
+                                                     <th>Family Head Name</th>
+                                                     <th>Number of person</th>
+                                                     <th>Status</th>
+                                                  </thead>
+                                                  <tr ng-repeat="userdetail in userdetails">
+                                                      <td>{{userdetail.tfamily_head}}</td>
+                                                      <td>{{userdetail.ttotal_person}}</td>
+                                                      <td>{{userdetail.tbook}}</td> 
+                                                  </tr>
+
+                                              </table>
+                                              </div>
+                                              <br><br>
+                                            
+                                            <div ng-controller="AllocateVehicleBusDetail">
+                                              <table class="allocatetable">
+                                                  <thead>
+                                                     <th>Bus Number</th>
+                                                     <th>Seat</th>
+                                                     <th>Status(Booked/Not NBooked)</th>
+                                                     
+                                                  </thead>
+                                                  <tr ng-repeat="busdetail in busdetails">
+                                                      <td>{{busdetail.tbus_number}}</td>
+                                                      <td>{{busdetail.tseat}}</td>
+                                                      <td>{{busdetail.tstatus}}</td>
+                                                      
+                                                  </tr>
+
+                                              </table>
+                                            </div>
+                                             </div>
+                                              <div class="lg-col-3">
+                                                    <label>For Bus allocation enter car number</label>
+                                                    <input type="text" ng-model="car_number"/><br><br>
+                                                    <label> and family head name</label>
+                                                    <input type="text" ng-model="family_head"/><br><br>
+                                                    <input type="submit" value="Allocate"/>
+                                              
+                                              </div>
+                  </div>
+
+                               </div>
+                              </div>
+                            </div>
+                            <!-- /tabs -->
+               
+
+                 
+                
+              </md-content>
+            </md-tab>
+         
+          <md-tab label="Train">
+              <md-content class="md-padding">
+                
+                      <!-- tabs left -->
+                            <div class="row">
+                            <div class="tabable tabs-left">
+                              <ul class="nav nav-tabs">
+                                <li class="active"><a href="#preference_detail" data-toggle="tab">Preference Detail</a></li>
+                                <li><a href="#add_detail" data-toggle="tab">Add Detail</a></li>
+                                <li><a href="#search_detail" data-toggle="tab">Search Detail</a></li>
+                              </ul>
+                              <div class="tab-content">
+                             <!--  ========================= preference detail ============================ -->
+                               <div class="tab-pane active" id="preference_detail">
+                                         <div class="container" ng-controller="Preference_Search_Detail">
+                                         <div class="row">
+                                           <div class="col-lg-0">
+                                           </div>
+                                           <div class="col-lg-7">
+                                              <div class="panel panel-heading" id="panelhead">Attendies Preference Detail</div>
+                                           </div>
+                                         </div>
+                                         
+                                         
+                                            <div class="panel panel-body" style="margin-top: -9% ">
+                                            <div class="row">
+                                              <div class="col-lg-2">
+                                               </div>
+                                               <div class="col-lg-7">
+                                               <b>Search by Name</b><br><br>
+                                            <input type="text" class="form-control" placeholder="head  name" ng-model="searchhead"><br><br>
+                                             <table class="table table-bordered" >
+                              
+                                              <thead class="thead">
+                                                <tr>
+
+                                                  <td >
+                                                    <a href="#" ng-click="sortType = 'family_head'; sortReverse = !sortReverse">
+                                                      Family Head
+                                                      <span ng-show="sortType == 'family_head' && !sortReverse" class="fa fa-caret-down"></span>
+                                                      <span ng-show="sortType == 'family_head' && sortReverse" class="fa fa-caret-up"></span>
+                                                    </a>
+                                                  </td>
+
+                                                  <td>
+                                                    <a href="#" ng-click="sortType = 'member_name'; sortReverse = !sortReverse">
+                                                    Family Member
+                                                      <span ng-show="sortType == 'member_name' && !sortReverse" class="fa fa-caret-down"></span>
+                                                      <span ng-show="sortType == 'member_name' && sortReverse" class="fa fa-caret-up"></span>
+                                                    </a>
+                                                  </td>
+
+                                                  <td >
+                                                    <a href="#" ng-click="sortType = 'age'; sortReverse = !sortReverse">
+                                                    Age
+                                                      <span ng-show="sortType == 'age' && !sortReverse" class="fa fa-caret-down"></span>
+                                                      <span ng-show="sortType == 'age' && sortReverse" class="fa fa-caret-up"></span>
+                                                    </a>
+                                                  </td>
+
+                                                  <td >
+                                                    <a href="#" ng-click="sortType = 'gender'; sortReverse = !sortReverse">
+                                                      Gender
+                                                      <span ng-show="sortType == 'gender' && !sortReverse" class="fa fa-caret-down"></span>
+                                                      <span ng-show="sortType == 'gender' && sortReverse" class="fa fa-caret-up"></span>
+                                                    </a>
+                                                  </td>
+
+                                                  <td >
+                                                    First Preference
+                                                  </td>
+                                                  <td>
+                                                     Second Preference
+                                                  </td>
+
+                                                </tr>
+                                              </thead>
+                                              
+                                              <tbody>
+                                                <tr ng-repeat="pdetail in preferencedetail | orderBy:sortType:sortReverse | filter:searchhead">
+                                                  <td>{{ pdetail.family_head}}</td>
+                                                  <td>{{ pdetail.member_name }}</td>
+                                                  <td>{{ pdetail.age}}</td>
+                                                  <td>{{pdetail.gender}}</td>
+                                                  <td>{{pdetail.first_preference}}</td>
+                                                  <td>{{pdetail.second_preference}}</td>
+                                                </tr>
+                                              </tbody>
+                                              
+                                            </table>
+                                            <input type="button" value="print"></input>
+                                          </div>  
+                                          </div>
+                                          </div>
+                                          </div>
+                                         
+                                </div>
+                               <div class="tab-pane" id="add_detail" ng-controller="Train_Add_Detail">
+                                   <div class="panel panel-heading" id="panelhead">Reservation Detail</div>
+                                    <div class="panel panel-body">
+                                   <div class="row">
+                                    <div class="col-lg-3" id="labels">
+                                    <label>Family Head Name</label>
+                                    </div>
+                                    <div class="col-lg-6">
+                                      <input type="text" ng-model="family_head" class="form-control" aria-describedby="sizing-addon3"  /><br>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-3" id="labels">
+                                    <label>Person Name</label>
+                                    </div>
+                                    <div class="col-lg-6">
+                                      <input type="text" ng-model="person_name" class="form-control" aria-describedby="sizing-addon3"  /><br>
+                                    </div>
+                                  </div>
+
+                                   <div class="row">
+                                    <div class="col-lg-3" id="labels">
+                                    <label>Gender</label>
+                                    </div>
+                                    <div class="col-lg-6">
+                                      <input type="text" ng-model="gender" class="form-control" aria-describedby="sizing-addon3"  /><br>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-3" id="labels">
+                                    <label>Age</label>
+                                    </div>
+                                    <div class="col-lg-6">
+                                      <input type="text" ng-model="age" class="form-control" aria-describedby="sizing-addon3"  /><br>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-3" id="labels">
+                                    <label>Train Name</label>
+                                    </div>
+                                    <div class="col-lg-6">
+                                      <input type="text" ng-model="train_name" class="form-control" aria-describedby="sizing-addon3"  /><br>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-3" id="labels">
+                                    <label>PNR Number</label>
+                                    </div>
+                                    <div class="col-lg-6">
+                                      <input type="text" ng-model="pnr_number" class="form-control" aria-describedby="sizing-addon3"  /><br>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-3" id="labels">
+                                    <label>Coach Number</label>
+                                    </div>
+                                    <div class="col-lg-6">
+                                      <input type="text" ng-model="coach_number" class="form-control" aria-describedby="sizing-addon3"  /><br>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-3" id="labels">
+                                    <label>Berth Number</label>
+                                    </div>
+                                    <div class="col-lg-6">
+                                      <input type="text" ng-model="berth_number" class="form-control" aria-describedby="sizing-addon3"  /><br>
+                                    </div>
+                                  </div>
+                                  
+                                  <div class="row">
+                                    <div class="col-lg-3" id="labels">
+                                    <label>Cash(Rs.)</label>
+                                    </div>
+                                    <div class="col-lg-6">
+                                      <input type="text" ng-model="cash" class="form-control" aria-describedby="sizing-addon3"  /><br>
+                                    </div>
+
+                                  </div>
+                                  <div class="row">
+                                    <input type="submit" value="Add" ng-click="addtraindetail()"/>
+                                  </div>
+                                  <br>
+                                  <br>
+
+                                  <div class="panel panel-footer">
+                                       <table border="1">
+                                  <thead>
+                                    <th>Family Head Name</th>
+                                    <th>Person Name</th>
+                                    <th>Gender</th>
+                                    <th>Age</th>
+                                    <th>Train Name</th>
+                                    <th>PNR Number</th>
+                                    <th>Coach Number</th>
+                                    <th>berth Number</th>
+                                    <th>Cash</th>
+                                    
+                                  </thead>
+                                    <tr ng-repeat="traindetail in traindetails">
+                                    <td>{{traindetail.tfamily_head}}</td>
+                                    <td>{{traindetail.tperson_name}}</td>
+                                    <td>{{traindetail.tgender}}</td>
+                                    <td>{{traindetail.tage}}</td>
+                                    <td>{{traindetail.ttrain_name}}</td>
+                                    <td>{{traindetail.tpnr_number}}</td>
+                                    <td>{{traindetail.tcoach_number}}</td>
+                                    <td>{{traindetail.tberth_number}}</td>
+                                    <td>{{traindetail.tcash}}</td>
+
+                                    
+                                    </tr>
+                                </table>
+                                  </div>
+                                  </div>
+                               </div>
+                               <div class="tab-pane" id="search_detail">
+                                          <div class="container" ng-controller="Train_Add_Detail">
+                                               <div class="row">
+                                                 <div class="col-lg-0">
+                                                 </div>
+                                                 <div class="col-lg-7">
+                                                    <div class="panel panel-heading" id="panelhead">Attendies Rservation Detail</div>
+                                                 </div>
+                                               </div>
+                                               
+                                               
+                                                  <div class="panel panel-body" style="margin-top: -9% ">
+                                                  <div class="row">
+                                                    <div class="col-lg-2">
+                                                     </div>
+                                                     <div class="col-lg-7">
+                                                     <b>Search by Name</b><br><br>
+                                                  <input type="text" class="form-control" placeholder="head  name" ng-model="searchhead"><br><br>
+                                                   <table class="table table-bordered" >
+                                    
+                                                    <thead class="thead">
+                                                      <tr>
+
+                                                        <td >
+                                                          <a href="#" ng-click="sortType = 'family_head'; sortReverse = !sortReverse">
+                                                            Family Head
+                                                            <span ng-show="sortType == 'family_head' && !sortReverse" class="fa fa-caret-down"></span>
+                                                            <span ng-show="sortType == 'family_head' && sortReverse" class="fa fa-caret-up"></span>
+                                                          </a>
+                                                        </td>
+
+                                                        <td>
+                                                          <a href="#" ng-click="sortType = 'member_name'; sortReverse = !sortReverse">
+                                                          Family Member
+                                                            <span ng-show="sortType == 'member_name' && !sortReverse" class="fa fa-caret-down"></span>
+                                                            <span ng-show="sortType == 'member_name' && sortReverse" class="fa fa-caret-up"></span>
+                                                          </a>
+                                                        </td>
+
+                                                        <td >
+                                                          <a href="#" ng-click="sortType = 'train_number'; sortReverse = !sortReverse">
+                                                          Train Number
+                                                            <span ng-show="sortType == 'train_number' && !sortReverse" class="fa fa-caret-down"></span>
+                                                            <span ng-show="sortType == 'train_number' && sortReverse" class="fa fa-caret-up"></span>
+                                                          </a>
+                                                        </td>
+
+                                                        <td >
+                                                          <a href="#" ng-click="sortType = 'pnr'; sortReverse = !sortReverse">
+                                                            PNR
+                                                            <span ng-show="sortType == 'pnr' && !sortReverse" class="fa fa-caret-down"></span>
+                                                            <span ng-show="sortType == 'pnr' && sortReverse" class="fa fa-caret-up"></span>
+                                                          </a>
+                                                        </td>
+
+                                                         <td >
+                                                          <a href="#" ng-click="sortType = 'coach_number'; sortReverse = !sortReverse">
+                                                            Coach Number
+                                                            <span ng-show="sortType == 'coach_number' && !sortReverse" class="fa fa-caret-down"></span>
+                                                            <span ng-show="sortType == 'coach_number' && sortReverse" class="fa fa-caret-up"></span>
+                                                          </a>
+                                                        </td>
+
+                                                         <td >
+                                                          <a href="#" ng-click="sortType = 'berth_number'; sortReverse = !sortReverse">
+                                                            Berth Number
+                                                            <span ng-show="sortType == 'berth_number' && !sortReverse" class="fa fa-caret-down"></span>
+                                                            <span ng-show="sortType == 'berth_number' && sortReverse" class="fa fa-caret-up"></span>
+                                                          </a>
+                                                        </td>
+
+                                                         <td >
+                                                          <a href="#" ng-click="sortType = 'cash'; sortReverse = !sortReverse">
+                                                            Cash
+                                                            <span ng-show="sortType == 'gender' && !sortReverse" class="fa fa-caret-down"></span>
+                                                            <span ng-show="sortType == 'gender' && sortReverse" class="fa fa-caret-up"></span>
+                                                          </a>
+                                                        </td>
+
+                                                         <td >
+                                                          <a href="#" ng-click="sortType = 'age'; sortReverse = !sortReverse">
+                                                            Gender
+                                                            <span ng-show="sortType == 'age' && !sortReverse" class="fa fa-caret-down"></span>
+                                                            <span ng-show="sortType == 'age' && sortReverse" class="fa fa-caret-up"></span>
+                                                          </a>
+                                                        </td>
+
+                                                         <td >
+                                                          <a href="#" ng-click="sortType = 'cash'; sortReverse = !sortReverse">
+                                                            Age
+                                                            <span ng-show="sortType == 'cash' && !sortReverse" class="fa fa-caret-down"></span>
+                                                            <span ng-show="sortType == 'cash' && sortReverse" class="fa fa-caret-up"></span>
+                                                          </a>
+                                                        </td>
+                                                      </tr>
+                                                    </thead>
+                                                    
+                                                    <tbody>
+                                                      <tr ng-repeat="traindetail in traindetails | orderBy:sortType:sortReverse | filter:searchhead">
+                                                 
+                                                        <td>{{traindetail.tfamily_head}}</td>
+                                                        <td>{{traindetail.tperson_name}}</td>
+                                                        <td>{{traindetail.ttrain_name}}</td>
+                                                        <td>{{traindetail.tpnr_number}}</td>
+                                                        <td>{{traindetail.tcoach_number}}</td>
+                                                        <td>{{traindetail.tberth_number}}</td>
+                                                        <td>{{traindetail.tcash}}</td>
+                                                        <td>{{traindetail.tgender}}</td>
+                                                        <td>{{traindetail.tage}}</td>
+
+                                                        
+                                                        </tr>
+                                                    </tbody>
+                                                    
+                                                  </table>
+                                                  <input type="button" value="print"></input>
+                                                </div>  
+                                                </div>
+                                                </div>
+                                                </div>
+                               </div>
+                              </div>
+                            </div>
+                            <!-- /tabs -->
+                         
+               </div>
+              </md-content>
+            </md-tab>
+                   
+          </md-tabs>
+        </md-content>
+      </div>
+      </div>
+
+</div>
+
+</td></tr>
+</table>
+</form>
+</body>
+</html>
+	

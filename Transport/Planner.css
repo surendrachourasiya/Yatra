@@ -1,0 +1,71 @@
+.main{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+/*for navbar*/
+.navbar center{
+	color: white;
+	font-size: 180%;
+	float: auto;
+}
+
+body, html{
+height: auto;
+
+}
+
+/*styling for tabs*/
+
+.tabsdemoDynamicHeight md-content {
+	 /*background-color: #42A5F5;*/
+  background-color: transparent !important; 
+  }
+  .tabsdemoDynamicHeight md-content md-tabs {
+    background: #f6f6f6;
+    border: 1px solid #e1e1e1; 
+  }
+    .tabsdemoDynamicHeight md-content md-tabs md-tabs-wrapper {
+      background: #42A5F5;
+  }
+  .tabsdemoDynamicHeight md-content h1:first-child {
+    margin-top: 0;
+   }
+
+  /* styling for panel head*/
+
+  #panelhead{
+	background: #505050;
+	color: white;
+	font-size: 110%;
+}
+.thead{
+  background-color: #F2F2F2;
+}
+.form-control{
+	height: 30px;
+}
+/*
+styling for day schedule*/
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover{background-color:#f5f5f5}
+
+/*.lg-col-3{
+	padding-top: 20%;
+}
+
+#add_detail{
+	float: auto;
+	margin-left: 20%;
+}*/

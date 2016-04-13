@@ -1,0 +1,269 @@
+A<!-- Author: Sonali Nimbola
+Date: 11 april-2016
+Date updated:  13 april 2016
+purose: Yatri Profile Page -->
+
+<html>
+	<head>
+		<title>
+			Planner page
+		</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Angular Material style sheet -->
+      <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+      <!-- Angular Material requires Angular.js Libraries -->
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+      <!-- Angular Material Library -->
+      <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+
+      <!-- Your application bootstrap  -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  
+  
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" </script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Xeditable library -->
+        
+        <link href="../bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
+        <script src="../bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+        <script src="../angular-1.5.3/angular-mocks.js"></script>
+
+        <!--    js and css coding for this page -->
+    		<link rel="stylesheet" type="text/css" href="Planner.css">
+    		<script type="text/javascript" src="Planner.js"></script>
+
+      <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+
+
+
+	</head>
+  
+  <body ng-app="PlannerApp" ng-cloak style="background-color: #eee">
+  <table class="table" style="padding-top: 20%">
+  <tr><td>
+   <div>
+       <nav class="navbar navbar-inverse navbar-center navbar-fixed-top">
+          <center>Planner</center>
+      </nav>
+  </div>
+  </td></tr><br>
+  <tr><td>
+  
+  <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+        <div ng-cloak>
+        <md-content>
+          <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Home">
+              <md-content class="md-padding">
+                 <h1>HOME</h1>
+              </md-content>
+            </md-tab>
+            <md-tab label="Date">
+              <md-content class="md-padding">
+               
+                          <div class="panel panel-heading" id="panelhead"><center>Add Vehicle</center></div>
+                          <div class="panel panel-body" >
+                          <div class="row">
+                              <div class="col-lg-2"></div>
+                              <div class="col-lg-8">
+                                   <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label>Yatra Name</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <input type="text" ng-model="yatra_name" class="form-control" aria-describedby="sizing-addon3"/><br>
+                                    </div>
+                                  </div>
+
+                                 <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label>Registration starts on</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <input type="date" ng-model="reg_starts_on" class="form-control" aria-describedby="sizing-addon3"/><br>
+                                    </div>
+                                  </div>
+
+                                   <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label>Registration ends on</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <input type="date" ng-model="reg_ends_on" class="form-control" aria-describedby="sizing-addon3"/><br>
+                                    </div>
+                                  </div>
+
+                                   <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label>Yatra starts date</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <input type="date" ng-model="yatra_starts_date" class="form-control" aria-describedby="sizing-addon3"/><br>
+                                    </div>
+                                  </div>
+
+                                   <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label>Yatra ends date</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <input type="date" ng-model="Yatra_ends_date" class="form-control" aria-describedby="sizing-addon3"/><br>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    
+                                    </div>
+                                    <div class="col-lg-8">
+                                       
+                                      <input type="checkbox"> Do yu want to share it with all coordinators</input><br><br>
+                                    </div>
+                                  </div>
+
+
+                                  <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    
+                                    </div>
+                                    <div class="col-lg-8">
+                                       
+                                      <input type="button" value="Add" /><br>
+                                    </div>
+                                  </div>
+
+
+
+                              </div>
+                              <div class="col-lg-2"></div>
+
+                          </div>
+                          </div>
+                  
+              </md-content>
+              </md-tab>
+       
+
+        
+          <md-tab label="Day Schedule">
+              <md-content class="md-padding">
+                    <div class="panel panel-heading" id="panelhead"><center>Day schedule</center></div>
+                      <div class="panel panel-body" ng-controller="DateAndLocation">
+                      <div class="row">
+                              <div class="col-lg-2"></div>
+                              <div class="col-lg-8">
+                                   <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    <label>Location</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                      <input type="text" ng-model="location" class="form-control" aria-describedby="sizing-addon3"/><br>
+                                    </div>
+                                  </div>
+
+                                 <div class="row">
+                                    <div class="col-lg-3" id="labels">
+                                    <label>Date                    From</label>
+                                    </div>
+                                    <div class="col-lg-4">
+                                      <input type="date" ng-model="from_date" class="form-control" aria-describedby="sizing-addon3"/><br>
+                                    </div>
+                                    <div class="col-lg-1" id="labels">
+                                    <label>To</label>
+                                    </div>
+                                    <div class="col-lg-4">
+                                      <input type="date" ng-model="to_date" class="form-control" aria-describedby="sizing-addon3"/><br>
+                                    </div>
+                                  </div>
+
+
+                                
+
+
+                                  <div class="row">
+                                    <div class="col-lg-4" id="labels">
+                                    
+                                    </div>
+                                    <div class="col-lg-8">
+                                       
+                                      <input type="button" value="Add" ng-click="addschedule()"/><br>
+                                    </div>
+                                  </div><br><br>
+
+                                  <div class="row">
+                                         <table class="table" border="1 px">
+                                           <thead>
+                                              <th>Location</th>
+                                              <th>From</th>
+                                              <th>To</th>
+                                              <th>Edit</th>
+                                              <th>Delete</th>
+
+                                           </thead>
+                                           <tr ng-repeat="datedetail in datedetails">
+                                              <td>{{datedetail.plocation}}</td>
+                                              <td>{{datedetail.pfrom}}</td>
+                                              <td>{{datedetail.pto}}</td>
+                                              <td><a ng-click="editdate = !editdate">Edit</a></td>
+                                              <td>delete</td>
+
+                                           </tr>
+                                         </table>
+                                  </div>
+                                </div>
+                                  <div ng-show="edittable">
+                                        <div class="panel panel-heading" id="panelhead"><center>Day Schedule</center></div>
+                                        <div class="panel panel-body" >
+                                              fvuig
+                                        </div>   
+                                        </div>                                 
+                                  </div>
+                                  
+
+
+
+                            
+                              <div class="col-lg-2"></div>
+                          </div>
+                          </div>
+                     
+            
+              </md-content>
+            </md-tab>
+
+             <md-tab label="Report">
+              <md-content class="md-padding">
+                
+                     
+                         
+              gxdttyol
+              </md-content>
+            </md-tab>
+                   
+          </md-tabs>
+        </md-content>
+      </div>
+      </div>
+
+</div>
+
+</td></tr>
+</table>
+</body>
+</html>
+	
